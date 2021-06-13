@@ -20,7 +20,7 @@ def maximo(lista):
 
 def prueba():
     try:
-        lista = [1,3,4,5,100,6,'a',8,-2]
+        lista = [1,3,4,5,100,6,8,-2]
         print (f'Minimo: {minimo(lista)}')
         print (f'Máximo: {maximo(lista)}')
     except Exception as err:

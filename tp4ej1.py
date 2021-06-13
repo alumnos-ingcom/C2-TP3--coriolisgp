@@ -35,16 +35,17 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
             
 
 def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=10):
-    try:
-        a = ingreso_entero(mensaje)
-        if a > valor_maximo or a < valor_minimo:
-            raise IngresoIncorrecto('Valor fuera de rango')
-    except IngresoIncorrecto as err:
-        print(err)
+    a = ingreso_entero(mensaje)
+    if a > valor_maximo or a < valor_minimo:
+        raise IngresoIncorrecto('Valor fuera de rango')
         
 def prueba():
-    ingreso_entero_restringido('Ingrese un Entero')
-    ingreso_entero_reintento('Ingrese un Entero')
+    try:
+        ingreso_entero_restringido('Ingrese un Entero')
+        ingreso_entero_reintento('Ingrese un Entero')
+    except IngresoIncorrecto as err:
+        print(err)
+    
 
 if __name__ == "__main__":
     prueba()

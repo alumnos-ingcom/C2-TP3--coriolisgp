@@ -6,29 +6,21 @@
 from tp4ej1 import IngresoIncorrecto
 
 def convertir_a_fahrenheit(centigrados):
-    try: 
-        fahrenheit = centigrados * (9/5) + 32
-        return fahrenheit
-    except Exception as err:
-        raise IngresoIncorrecto('No era un numero, no se puede convertir')
+    fahrenheit = centigrados * (9/5) + 32
+    return fahrenheit
 
 def convertir_a_centigrados(fahrenheit):
-    try:
-        celsius = (fahrenheit - 32) * (5/9)
-        return celsius
-    except Exception as err:
-        raise IngresoIncorrecto('No era un numero, no se puede convertir')
+    celsius = (fahrenheit - 32) * (5/9)
+    return celsius
 
 
 def prueba():
-    valor_a_convertir = 'a'
-    try:
-        fahrenheit = convertir_a_fahrenheit(valor_a_convertir)
-        print(fahrenheit)
-        celsius = convertir_a_centigrados(fahrenheit)
-        print(celsius)
-    except IngresoIncorrecto as err:
-        print(err)
+    valor_a_convertir = 30
+    fahrenheit = convertir_a_fahrenheit(valor_a_convertir)
+    print(fahrenheit)
+    celsius = convertir_a_centigrados(fahrenheit)
+    print(celsius)
+        
 
 if __name__ == "__main__":
     prueba()
